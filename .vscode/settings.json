@@ -1,10 +1,10 @@
 {
-	//ESLintによる自動バグ修正
+  //ESLintによる自動バグ修正
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
   //セーブ時にフォーマッターを適用する
-	//適用するフォーマッターの決定
+  //適用するフォーマッターの決定
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
 }
