@@ -7,6 +7,9 @@ import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 
 import { playwright } from '@vitest/browser-playwright';
 
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
+
 const dirname =
   typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
@@ -14,6 +17,16 @@ const dirname =
 export default defineConfig({
   test: {
     projects: [
+      {
+        plugins: [tsconfigPaths(), react()],
+        test: {
+          name: 'unit',
+          environment: 'jsdom',
+          include: ['src/**/*.test.{ts,tsx}', 'src/**/*.spec.{ts,tsx}'],
+          exclude: ['node_modules', '**/*.stories.?(m)@(c)js(x)'],
+          setupFiles: ['./vitest.setup.ts'],
+        },
+      },
       {
         extends: true,
         plugins: [
