@@ -10,11 +10,11 @@ type LineHeightThemeKeys = keyof typeof theme.lineHeights;
 type LetterSpacingThemeKeys = keyof typeof theme.letterSpacings;
 
 // 各themeキーの型
-export type space = SpaceThemeKeys | (string & {});
-export type color = ColorThemeKeys | (string & {});
-export type fontSize = FontSizeThemeKeys | (string & {});
-export type lineHeight = LineHeightThemeKeys | (string & {});
-export type letterSpacing = LetterSpacingThemeKeys | (string & {});
+export type Space = SpaceThemeKeys | (string & {});
+export type Color = ColorThemeKeys | (string & {});
+export type FontSize = FontSizeThemeKeys | (string & {});
+export type LineHeight = LineHeightThemeKeys | (string & {});
+export type LetterSpacing = LetterSpacingThemeKeys | (string & {});
 
 // ブレークポイント
 const BREAKPOINTS: { [key: string]: string } = {
