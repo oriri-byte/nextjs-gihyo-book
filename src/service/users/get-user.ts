@@ -1,5 +1,5 @@
-import type { ApiContext, User } from '../../types/data';
-import { fetcher } from '../../utils/fetcher';
+import type { ApiContext, User } from '@/types/data';
+import { fetcher } from '@/utils/fetcher';
 
 export type GetUserParams = {
   id: number;
@@ -11,7 +11,10 @@ export type GetUserParams = {
  * @param params パラメータ
  * @returns ユーザ
  */
-const getUser = async (context: ApiContext, { id }: GetUserParams): Promise<User> => {
+const getUser = async (
+  context: ApiContext,
+  { id }: GetUserParams,
+): Promise<User> => {
   /**
    * ユーザAPI
    * サンプルレスポンス
@@ -24,12 +27,15 @@ const getUser = async (context: ApiContext, { id }: GetUserParams): Promise<User
    *  "description": "LoremIpsum is simply dummy text of printing and typesetting industry"
    * }
    */
-  return await fetcher(`${context.apiRootUrl.replace(/\/$/g, '')}/users/${id}`, {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
+  return await fetcher(
+    `${context.apiRootUrl.replace(/\/$/g, '')}/users/${id}`,
+    {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
     },
-  });
+  );
 };
 
 export default getUser;

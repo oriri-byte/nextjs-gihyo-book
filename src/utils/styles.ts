@@ -1,5 +1,5 @@
-import { theme } from '../themes';
-import type { Responsive, ResponsiveProp } from '../types/styles';
+import { theme } from '@/themes';
+import type { Responsive, ResponsiveProp } from '@/types/styles';
 
 export type AppTheme = typeof theme;
 
